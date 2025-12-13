@@ -86,8 +86,9 @@ const PracticeAreaCard = ({ area }) => {
     );
 };
 
-const ServicesGrid = ({ limit = 8, showTitle = true, showCTA = true }) => {
+const ServicesGrid = ({ limit = 8, mobileLimit = null, showTitle = true, showCTA = true }) => {
     const displayedServices = practiceAreas.slice(0, limit);
+    const mobileServices = mobileLimit ? practiceAreas.slice(0, mobileLimit) : displayedServices;
 
     return (
         <section className="py-20 bg-olive-50">
@@ -99,8 +100,16 @@ const ServicesGrid = ({ limit = 8, showTitle = true, showCTA = true }) => {
                     />
                 )}
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Desktop: Show all cards */}
+                <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {displayedServices.map((area) => (
+                        <PracticeAreaCard key={area.id} area={area} />
+                    ))}
+                </div>
+
+                {/* Mobile: Show limited cards */}
+                <div className="grid grid-cols-1 gap-4 sm:hidden">
+                    {mobileServices.map((area) => (
                         <PracticeAreaCard key={area.id} area={area} />
                     ))}
                 </div>

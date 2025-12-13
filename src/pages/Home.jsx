@@ -19,7 +19,7 @@ const Home = () => {
             <Hero />
             <AboutPreview />
             <TeamHighlight />
-            <ServicesGrid limit={8} />
+            <ServicesGrid limit={8} mobileLimit={4} />
             <StatsCounter />
             <WhyChooseUs />
             <CallToAction />
