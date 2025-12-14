@@ -28,10 +28,13 @@ const CallToAction = () => {
                             Book Consultation
                             <FaArrowRight className="w-4 h-4" />
                         </button>
-                        <Button href="tel:+918285858505" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gold-600">
-                            <FaPhone className="w-4 h-4 mr-2" />
+                        <a
+                            href="tel:+918285858505"
+                            className="inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-gold-600 px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-lg"
+                        >
+                            <FaPhone className="w-4 h-4" />
                             +91 8285858505
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </div>
