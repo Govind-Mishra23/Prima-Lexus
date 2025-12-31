@@ -52,42 +52,70 @@ export const ServiceCard = ({ icon: Icon, title, description, services = [] }) =
 };
 
 // Team Card variant with premium styling
-export const TeamCard = ({ name, designation, image, expertise = [], bio }) => {
+import cardIcon from '../../assets/card_icon.png';
+
+export const TeamCard = ({ name, designation, image }) => {
     return (
-        <Card className="text-center h-full group overflow-hidden" padding="none">
-            <div className="relative overflow-hidden">
-                {image ? (
-                    <img
-                        src={image}
-                        alt={name}
-                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                ) : (
-                    <div className="w-full h-64 bg-gradient-to-br from-olive-700 to-olive-800 flex items-center justify-center">
-                        <span className="text-6xl font-bold text-white/30">
-                            {name.split(' ').map(n => n[0]).join('')}
-                        </span>
+        <div className="relative group w-full max-w-[280px] mx-auto overflow-hidden rounded-xl shadow-xl transition-all duration-300 hover:shadow-gold-500/20 hover:-translate-y-1">
+            {/* Background - Olive to match website */}
+            <div className="absolute inset-0 bg-gradient-to-b from-olive-800 to-olive-900 z-0"></div>
+
+            {/* Content Container */}
+            <div className="relative z-10 flex flex-col items-center pt-6 pb-6 px-3 h-full">
+
+                {/* Header: Logo/Icon & Text */}
+                <div className="w-full flex justify-between items-center mb-4 pl-1 pr-1">
+                    {/* Scales Icon (Image) */}
+                    <div className="relative w-12 h-12 -ml-1">
+                        <img src={cardIcon} alt="Scales of Justice" className="w-full h-full object-contain drop-shadow-md" />
                     </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-olive-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="p-6">
-                <h3 className="text-xl font-bold text-olive-800 mb-1">{name}</h3>
-                <p className="text-gold-600 font-medium mb-3">{designation}</p>
-                {expertise.length > 0 && (
-                    <div className="flex flex-wrap gap-2 justify-center">
-                        {expertise.slice(0, 3).map((skill, index) => (
-                            <span
-                                key={index}
-                                className="text-xs bg-olive-100 text-olive-600 px-2 py-1 rounded-full"
-                            >
-                                {skill}
-                            </span>
-                        ))}
+
+                    {/* LAW FIRM Text */}
+                    <div className="flex flex-col items-end">
+                        <h3 className="text-gold-200 font-serif font-bold tracking-[0.15em] text-xs uppercase">Law Firm</h3>
+                        <div className="w-full h-0.5 bg-gradient-to-l from-gold-400 to-transparent mt-0.5"></div>
                     </div>
-                )}
+                </div>
+
+                {/* Decorative Gold Line */}
+                <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-gold-500 to-transparent mb-6 opacity-60"></div>
+
+                {/* Profile Image */}
+                <div className="relative mb-5 group-hover:scale-105 transition-transform duration-500">
+                    <div className="w-32 h-32 rounded-full border-2 border-white/80 shadow-2xl overflow-hidden relative z-10 bg-olive-100">
+                        {image ? (
+                            <img
+                                src={image}
+                                alt={name}
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-olive-200 text-olive-600 text-3xl font-serif">
+                                {name.charAt(0)}
+                            </div>
+                        )}
+                    </div>
+                    {/* Glow behind head */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 bg-white/5 blur-xl rounded-full -z-0"></div>
+                </div>
+
+                {/* Name */}
+                <h2 className="text-xl font-serif font-bold text-white tracking-widest uppercase mb-1 text-center drop-shadow-md">
+                    {name}
+                </h2>
+
+                {/* Designation */}
+                <p className="text-gold-400 font-serif text-sm italic mb-4 tracking-wide text-center">
+                    {designation}
+                </p>
+
+                {/* Bottom Separator */}
+                <div className="w-16 h-0.5 bg-gold-600/50 mt-auto"></div>
             </div>
-        </Card>
+
+            {/* Shine effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        </div>
     );
 };
 

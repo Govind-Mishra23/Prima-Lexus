@@ -2,6 +2,7 @@
 
 // Import images
 import arunImage from '../assets/arun1.png';
+import akDubeyImage from '../assets/ak_dubey.png';
 
 export const teamMembers = [
     {
@@ -14,6 +15,17 @@ export const teamMembers = [
         education: "LL.B, LL.M",
         experience: "15+ Years",
         isFeatured: true
+    },
+    {
+        id: 2,
+        name: "Adv A K Dubey",
+        designation: "Advocate Supreme Court of India",
+        image: akDubeyImage,
+        bio: "A distinguished Advocate at the Supreme Court of India.",
+        expertise: ["Supreme Court Litigation", "Constitutional Law"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
     }
 ];
 

@@ -19,7 +19,14 @@ export default {
                     700: '#4a4f41',
                     800: '#3d4238',
                     900: '#343830',
+                    900: '#343830',
                     950: '#1a1d18',
+                },
+                // Deep navy for premium cards
+                navy: {
+                    800: '#0B1C3E',
+                    900: '#021024',
+                    950: '#010812',
                 },
                 // Rich gold accent color
                 gold: {
