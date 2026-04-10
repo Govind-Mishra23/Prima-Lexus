@@ -3,6 +3,8 @@
 // Import images
 import arunImage from '../assets/arun1.png';
 import akDubeyImage from '../assets/ak_dubey.png';
+import anikeshTiwariImage from '../assets/AnikeshTiwari.png';
+import mukundImage from '../assets/Mukund.png';
 
 export const teamMembers = [
     {
@@ -23,6 +25,28 @@ export const teamMembers = [
         image: akDubeyImage,
         bio: "A distinguished Advocate at the Supreme Court of India.",
         expertise: ["Supreme Court Litigation", "Constitutional Law"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
+        id: 3,
+        name: "Adv Anikesh Tiwari",
+        designation: "Advocate Supreme Court of India",
+        image: anikeshTiwariImage,
+        bio: "A dedicated Advocate at the Supreme Court of India.",
+        expertise: ["Supreme Court Litigation", "Constitutional Law"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
+        id: 4,
+        name: "Mukund Sharan",
+        designation: "Advocate",
+        image: mukundImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
         education: "LL.B",
         experience: "Experienced",
         isFeatured: false
