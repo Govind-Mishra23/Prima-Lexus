@@ -23,6 +23,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
 import ServicePage from './pages/ServicePage';
+import NotFound from './pages/NotFound';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -68,6 +69,7 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/services/:slug" element={<ServicePage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </ConsultationProvider>

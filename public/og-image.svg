@@ -1,0 +1,30 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2D3E1F"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="80" fill="#D4AF37" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="100" fill="#D4AF37" opacity="0.1"/>
+  
+  <!-- Main content -->
+  <text x="600" y="250" font-family="Georgia, serif" font-size="72" font-weight="bold" fill="#D4AF37" text-anchor="middle">
+    Prima Lexus
+  </text>
+  
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="36" fill="#FFFFFF" text-anchor="middle" opacity="0.9">
+    Advocates &amp; Consultants
+  </text>
+  
+  <line x1="400" y1="360" x2="800" y2="360" stroke="#D4AF37" stroke-width="2" opacity="0.5"/>
+  
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="28" fill="#FFFFFF" text-anchor="middle" opacity="0.8">
+    15+ Years of Legal Excellence
+  </text>
+  
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="24" fill="#D4AF37" text-anchor="middle" opacity="0.7">
+    Delhi NCR | India
+  </text>
+  
+  <!-- Bottom decoration -->
+  <rect x="0" y="600" width="1200" height="30" fill="#D4AF37" opacity="0.2"/>
+</svg>

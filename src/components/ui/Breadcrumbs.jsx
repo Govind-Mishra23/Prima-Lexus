@@ -1,6 +1,7 @@
 // Breadcrumbs Component for interior pages
 import { Link, useLocation } from 'react-router-dom';
 import { FaChevronRight, FaHome } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const routeLabels = {
     'about': 'About Us',
@@ -19,45 +20,79 @@ const Breadcrumbs = ({ customLabels = {} }) => {
 
     if (pathnames.length === 0) return null;
 
-    return (
-        <nav className="bg-olive-50 border-b border-olive-100">
-            <div className="container mx-auto px-4 py-3">
-                <ol className="flex items-center flex-wrap gap-2 text-sm">
-                    <li>
-                        <Link
-                            to="/"
-                            className="text-olive-600 hover:text-gold-600 transition-colors flex items-center gap-1"
-                        >
-                            <FaHome className="w-3.5 h-3.5" />
-                            <span>Home</span>
-                        </Link>
-                    </li>
-                    {pathnames.map((name, index) => {
-                        const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-                        const isLast = index === pathnames.length - 1;
-                        const label = customLabels[name] || routeLabels[name] || name.split('-').map(word =>
-                            word.charAt(0).toUpperCase() + word.slice(1)
-                        ).join(' ');
+    // Generate breadcrumb list for structured data
+    const breadcrumbList = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://primalexus.com/"
+            },
+            ...pathnames.map((name, index) => {
+                const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+                const label = customLabels[name] || routeLabels[name] || name.split('-').map(word =>
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
 
-                        return (
-                            <li key={name} className="flex items-center gap-2">
-                                <FaChevronRight className="w-3 h-3 text-olive-400" />
-                                {isLast ? (
-                                    <span className="text-olive-800 font-medium">{label}</span>
-                                ) : (
-                                    <Link
-                                        to={routeTo}
-                                        className="text-olive-600 hover:text-gold-600 transition-colors"
-                                    >
-                                        {label}
-                                    </Link>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ol>
-            </div>
-        </nav>
+                return {
+                    "@type": "ListItem",
+                    "position": index + 2,
+                    "name": label,
+                    "item": `https://primalexus.com${routeTo}`
+                };
+            })
+        ]
+    };
+
+    return (
+        <>
+            <Helmet>
+                <script type="application/ld+json">
+                    {JSON.stringify(breadcrumbList)}
+                </script>
+            </Helmet>
+            <nav className="bg-olive-50 border-b border-olive-100">
+                <div className="container mx-auto px-4 py-3">
+                    <ol className="flex items-center flex-wrap gap-2 text-sm">
+                        <li>
+                            <Link
+                                to="/"
+                                className="text-olive-600 hover:text-gold-600 transition-colors flex items-center gap-1"
+                            >
+                                <FaHome className="w-3.5 h-3.5" />
+                                <span>Home</span>
+                            </Link>
+                        </li>
+                        {pathnames.map((name, index) => {
+                            const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+                            const isLast = index === pathnames.length - 1;
+                            const label = customLabels[name] || routeLabels[name] || name.split('-').map(word =>
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                            ).join(' ');
+
+                            return (
+                                <li key={name} className="flex items-center gap-2">
+                                    <FaChevronRight className="w-3 h-3 text-olive-400" />
+                                    {isLast ? (
+                                        <span className="text-olive-800 font-medium">{label}</span>
+                                    ) : (
+                                        <Link
+                                            to={routeTo}
+                                            className="text-olive-600 hover:text-gold-600 transition-colors"
+                                        >
+                                            {label}
+                                        </Link>
+                                    )}
+                                </li>
+                            );
+                        })}
+                    </ol>
+                </div>
+            </nav>
+        </>
     );
 };
 
