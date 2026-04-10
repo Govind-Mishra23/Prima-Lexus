@@ -116,8 +116,6 @@ const Team = () => {
                     </div>
                 </section>
             )}
-
-            {/* Other Team Members - Only show if there are other members */}
             {otherMembers.length > 0 && (
                 <section className="py-20 bg-slate-50">
                     <div className="container mx-auto px-4">
