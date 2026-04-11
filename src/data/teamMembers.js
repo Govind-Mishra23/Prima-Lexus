@@ -36,7 +36,7 @@ export const teamMembers = [
     },
     {
         id: 3,
-        name: "Adv Pancham Kumar",
+        name: "Adv Pancham Jha",
         designation: "Counsel Govt. of India\nSupreme Court of India",
         image: panchamKumarImage,
         imagePosition: "center 20%",
@@ -48,7 +48,7 @@ export const teamMembers = [
     },
     {
         id: 8,
-        name: "Praveen Pradhan",
+        name: "Adv Praveen Pradhan",
         designation: "Advocate",
         image: praveenPradhanImage,
         bio: "A dedicated legal professional at Prima Lexus.",
