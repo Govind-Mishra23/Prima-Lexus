@@ -7,6 +7,7 @@ import anikeshTiwariImage from '../assets/AnikeshTiwari.png';
 import mukundImage from '../assets/Mukund.png';
 import panchamKumarImage from '../assets/PanchamKumar.png';
 import preetiTiwariImage from '../assets/PreetiTiwari.png';
+import PratimaTiwari from '../assets/PratimaTiwari.png' ; 
 
 export const teamMembers = [
     {
@@ -36,6 +37,7 @@ export const teamMembers = [
         name: "Adv Pancham Kumar",
         designation: "Counsel Govt. of India\nSupreme Court of India",
         image: panchamKumarImage,
+        imagePosition: "center 20%",
         bio: "A committed legal professional at Prima Lexus.",
         expertise: ["Legal Consultation", "Case Strategy"],
         education: "LL.B",
@@ -44,6 +46,18 @@ export const teamMembers = [
     },
     {
         id: 4,
+        name: "Adv Pratima Tiwari",
+        designation: "Advocate supreme court of India ",
+        image: PratimaTiwari,
+        imagePosition: "center 18%",
+        bio: "A dedicated Advocate at the Supreme Court of India.",
+        expertise: ["Supreme Court Litigation", "Constitutional Law"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
+        id: 5,
         name: "Adv Anikesh Tiwari",
         designation: "Advocate ",
         image: anikeshTiwariImage,
@@ -54,7 +68,7 @@ export const teamMembers = [
         isFeatured: false
     },
       {
-        id: 5,
+        id: 6,
         name: "Preeti Tiwari",
         designation: "Advocate",
         image: preetiTiwariImage,
@@ -65,7 +79,7 @@ export const teamMembers = [
         isFeatured: false
     },
     {
-        id: 6,
+        id: 7,
         name: "Mukund Sharan",
         designation: "Advocate",
         image: mukundImage,

@@ -62,7 +62,12 @@ export const ServiceCard = ({
   );
 };
 
-export const TeamCard = ({ name, designation, image }) => {
+export const TeamCard = ({
+  name,
+  designation,
+  image,
+  imagePosition = "center 20%",
+}) => {
   const nameRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -128,6 +133,7 @@ export const TeamCard = ({ name, designation, image }) => {
                 src={image}
                 alt={name}
                 className="w-full h-full object-cover"
+                style={{ objectPosition: imagePosition }}
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-olive-200 text-olive-600 text-3xl font-serif">
