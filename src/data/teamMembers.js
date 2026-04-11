@@ -8,6 +8,8 @@ import mukundImage from '../assets/Mukund.png';
 import panchamKumarImage from '../assets/PanchamKumar.png';
 import preetiTiwariImage from '../assets/PreetiTiwari.png';
 import PratimaTiwari from '../assets/PratimaTiwari.png' ; 
+import praveenPradhanImage from '../assets/PraveenPradhan.png';
+import sashiKantImage from '../assets/SashiKant.png';
 
 export const teamMembers = [
     {
@@ -45,6 +47,17 @@ export const teamMembers = [
         isFeatured: false
     },
     {
+        id: 8,
+        name: "Praveen Pradhan",
+        designation: "Advocate",
+        image: praveenPradhanImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
         id: 4,
         name: "Adv Pratima Tiwari",
         designation: "Advocate supreme court of India ",
@@ -52,6 +65,17 @@ export const teamMembers = [
         imagePosition: "center 18%",
         bio: "A dedicated Advocate at the Supreme Court of India.",
         expertise: ["Supreme Court Litigation", "Constitutional Law"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+     {
+        id: 9,
+        name: "Adv Sashikant Maurya",
+        designation: "Advocate",
+        image: sashiKantImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
         education: "LL.B",
         experience: "Experienced",
         isFeatured: false
@@ -88,7 +112,9 @@ export const teamMembers = [
         education: "LL.B",
         experience: "Experienced",
         isFeatured: false
-    }
+    },
+    
+   
   
 ];
 
