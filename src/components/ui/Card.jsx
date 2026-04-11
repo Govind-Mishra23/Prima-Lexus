@@ -148,7 +148,7 @@ export const TeamCard = ({ name, designation, image }) => {
         </h2>
 
         {/* Designation */}
-        <p className="text-gold-400 font-serif text-sm italic mb-4 tracking-wide text-center">
+        <p className="text-gold-400 font-serif text-sm italic mb-4 tracking-wide text-center whitespace-pre-line">
           {designation}
         </p>
 

@@ -5,6 +5,8 @@ import arunImage from '../assets/arun1.png';
 import akDubeyImage from '../assets/ak_dubey.png';
 import anikeshTiwariImage from '../assets/AnikeshTiwari.png';
 import mukundImage from '../assets/Mukund.png';
+import panchamKumarImage from '../assets/PanchamKumar.png';
+import preetiTiwariImage from '../assets/PreetiTiwari.png';
 
 export const teamMembers = [
     {
@@ -31,8 +33,19 @@ export const teamMembers = [
     },
     {
         id: 3,
+        name: "Adv Pancham Kumar",
+        designation: "Counsel Govt. of India\nSupreme Court of India",
+        image: panchamKumarImage,
+        bio: "A committed legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
+        id: 4,
         name: "Adv Anikesh Tiwari",
-        designation: "Advocate Supreme Court of India",
+        designation: "Advocate ",
         image: anikeshTiwariImage,
         bio: "A dedicated Advocate at the Supreme Court of India.",
         expertise: ["Supreme Court Litigation", "Constitutional Law"],
@@ -40,8 +53,19 @@ export const teamMembers = [
         experience: "Experienced",
         isFeatured: false
     },
+      {
+        id: 5,
+        name: "Preeti Tiwari",
+        designation: "Advocate",
+        image: preetiTiwariImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Client Representation"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
     {
-        id: 4,
+        id: 6,
         name: "Mukund Sharan",
         designation: "Advocate",
         image: mukundImage,
@@ -51,6 +75,7 @@ export const teamMembers = [
         experience: "Experienced",
         isFeatured: false
     }
+  
 ];
 
 export const getFeaturedMember = () => teamMembers.find(member => member.isFeatured);
