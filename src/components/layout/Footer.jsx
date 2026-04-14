@@ -11,9 +11,12 @@ import {
   FaInstagram,
   FaArrowRight,
   FaBalanceScale,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { primaryContact } from "../../data/offices";
 import logoImage from "../../assets/logo.png";
+
+const developerContactUrl = "https://linktr.ee/govind24";
 
 const quickLinks = [
   { name: "Home", path: "/" },
@@ -211,6 +214,26 @@ const Footer = () => {
                   </p>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Developer Marketing Strip */}
+        <div className="border-t border-b border-gold-500/20 bg-gradient-to-r from-olive-900 via-olive-850 to-olive-900">
+          <div className="container mx-auto px-4 py-4">
+            <div className="w-full md:w-1/2 mx-auto flex items-center justify-between gap-4">
+              <a
+                href={developerContactUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/10 px-5 py-2 text-sm font-semibold text-gold-300 hover:bg-gold-500 hover:text-white transition-all duration-300"
+              >
+                Contact Developer
+                <FaExternalLinkAlt className="w-3.5 h-3.5" />
+              </a>
+              <p className="text-sm text-olive-300 text-right">
+                Marketing partner and digital growth contact
+              </p>
             </div>
           </div>
         </div>

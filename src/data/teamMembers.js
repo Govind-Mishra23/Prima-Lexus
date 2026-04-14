@@ -98,7 +98,7 @@ export const teamMembers = [
         image: preetiTiwariImage,
         bio: "A dedicated legal professional at Prima Lexus.",
         expertise: ["Legal Consultation", "Client Representation"],
-        education: "LL.B",
+        education: "BJ , LL.B",
         experience: "Experienced",
         isFeatured: false
     },
