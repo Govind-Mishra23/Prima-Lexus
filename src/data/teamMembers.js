@@ -10,6 +10,8 @@ import preetiTiwariImage from '../assets/PreetiTiwari.png';
 import PratimaTiwari from '../assets/PratimaTiwari.png' ; 
 import praveenPradhanImage from '../assets/PraveenPradhan.png';
 import sashiKantImage from '../assets/SashiKant.png';
+import vikashDubeyImage from '../assets/vikashdubey.png';
+import shwetaImage from '../assets/ShwetaSingal.png';
 
 export const teamMembers = [
     {
@@ -113,9 +115,28 @@ export const teamMembers = [
         experience: "Experienced",
         isFeatured: false
     },
-    
-   
-  
+    {
+        id: 10,
+        name: "Adv Vikash Dubey",
+        designation: "Advocate",
+        image: vikashDubeyImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    },
+    {
+        id: 11,
+        name: "Adv Shweta Singal",
+        designation: "Advocate",
+        image: shwetaImage,
+        bio: "A dedicated legal professional at Prima Lexus.",
+        expertise: ["Legal Consultation", "Case Strategy"],
+        education: "LL.B",
+        experience: "Experienced",
+        isFeatured: false
+    }
 ];
 
 export const getFeaturedMember = () => teamMembers.find(member => member.isFeatured);

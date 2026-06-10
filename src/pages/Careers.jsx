@@ -114,77 +114,111 @@ const Careers = () => {
             <section className="py-24 bg-white relative">
                 <div className="container mx-auto px-4">
                     <SectionTitle
-                        title="Recruitment Details"
-                        subtitle="Join our dynamic legal team. We welcome dedicated professionals ready to make a significant impact."
+                        title="Opportunities at Prima Lexus"
+                        subtitle="Join our dynamic legal team. We welcome dedicated advocates and passionate law students ready to make a significant impact."
                     />
 
                     <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-                        {/* Who Can Apply */}
+                        {/* Advocate Recruitment */}
                         <div className="bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm">
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm flex-shrink-0">
                                     <FaGavel className="w-6 h-6" />
                                 </div>
-                                <h2 className="text-2xl font-bold text-slate-800">Who Can Apply?</h2>
+                                <div>
+                                    <span className="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-50 px-2.5 py-1 rounded-full">Practice Roles</span>
+                                    <h2 className="text-2xl font-bold text-slate-800 mt-2">Advocate Recruitment</h2>
+                                </div>
                             </div>
-                            
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">Enrolled Advocates</h4>
-                                        <p className="text-slate-600 mt-1">Open to both Freshers and Experienced candidates seeking growth.</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">Strong Skills</h4>
-                                        <p className="text-slate-600 mt-1">Excellent drafting abilities and confident court appearance skills.</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">Professional Values</h4>
-                                        <p className="text-slate-600 mt-1">Highly committed, growth-oriented, and ethical in work delivery.</p>
-                                    </div>
-                                </li>
-                            </ul>
+
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-450 mb-3">Who Can Apply?</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Enrolled Advocates (both Freshers & Experienced)</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Strong drafting & confident court appearance skills</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Committed, growth-oriented & highly ethical values</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-slate-100 pt-6">
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-450 mb-3">What We Offer</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span>Exposure to challenging litigation & high-profile cases</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span>Active professional mentorship & continuous training</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span>Collaborative workplace valuing integrity & excellence</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
-                        {/* What We Offer */}
+                        {/* Legal Internship Program */}
                         <div className="bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm">
-                                    <FaTrophy className="w-6 h-6" />
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm flex-shrink-0">
+                                    <FaGraduationCap className="w-6 h-6" />
                                 </div>
-                                <h2 className="text-2xl font-bold text-slate-800">What We Offer</h2>
+                                <div>
+                                    <span className="text-xs font-bold uppercase tracking-widest text-olive-600 bg-olive-50 px-2.5 py-1 rounded-full">Academic Roles</span>
+                                    <h2 className="text-2xl font-bold text-slate-800 mt-2">Legal Internship</h2>
+                                </div>
                             </div>
 
-                            <ul className="space-y-6">
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">High-Profile Cases</h4>
-                                        <p className="text-slate-600 mt-1">Direct exposure to challenging, high-profile legal matters and litigation.</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">Growth & Mentorship</h4>
-                                        <p className="text-slate-600 mt-1">Continuous professional training, guidance, and active career development support.</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start gap-4">
-                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
-                                    <div>
-                                        <h4 className="font-bold text-slate-800 text-lg">Dynamic Environment</h4>
-                                        <p className="text-slate-600 mt-1">A collaborative, premium workplace valuing integrity and mutual respect.</p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-450 mb-3">Eligibility</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Students pursuing <strong>BA LLB</strong> or <strong>LLB (Three Years)</strong></span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Students pursuing <strong>LLM</strong> or <strong>PhD</strong></span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheck className="w-3.5 h-3.5 text-gold-500 mt-1 flex-shrink-0" />
+                                            <span>Enthusiasm for legal research, analysis & documentation</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="border-t border-slate-100 pt-6">
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-450 mb-3">Duration & Flexibility</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span>Flexible durations: <strong>1 Month</strong> or <strong>2 Months</strong></span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span><strong>Custom extensions</strong> (as long as students wish to continue)</span>
+                                        </li>
+                                        <li className="flex items-start gap-2.5 text-slate-600">
+                                            <FaCheckCircle className="w-4 h-4 text-olive-650 mt-1 flex-shrink-0" />
+                                            <span>Practical litigation exposure & certificate upon completion</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
