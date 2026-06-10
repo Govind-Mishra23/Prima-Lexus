@@ -12,6 +12,7 @@ const navLinks = [
     { name: 'About Us', path: '/about', hasDropdown: true, dropdownType: 'about' },
     { name: 'Practice Areas', path: '/practice-areas', hasDropdown: true, dropdownType: 'practice' },
     { name: 'Our Services', path: '/services', hasDropdown: true, dropdownType: 'services' },
+    { name: 'Careers', path: '/careers' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact Us', path: '/contact' },
 ];
@@ -285,10 +286,18 @@ const Navbar = () => {
                                     <Link
                                         key={link.path}
                                         to={link.path}
-                                        className={`px-4 py-2 rounded-lg font-medium transition-all duration-200
-                                            ${location.pathname === link.path ? 'text-gold-600 bg-gold-50' : 'text-olive-700 hover:text-gold-600 hover:bg-olive-50'}`}
+                                        className={link.path === '/careers'
+                                            ? 'moving-border-btn font-medium shadow-sm'
+                                            : `px-4 py-2 rounded-lg font-medium transition-all duration-200
+                                                ${location.pathname === link.path ? 'text-gold-600 bg-gold-50' : 'text-olive-700 hover:text-gold-600 hover:bg-olive-50'}`}
                                     >
-                                        {link.name}
+                                        {link.path === '/careers' ? (
+                                            <span className="moving-border-btn-inner">
+                                                {link.name}
+                                            </span>
+                                        ) : (
+                                            link.name
+                                        )}
                                     </Link>
                                 )
                             ))}
@@ -336,10 +345,21 @@ const Navbar = () => {
                                     <Link
                                         key={link.path}
                                         to={link.path}
-                                        className={`px-4 py-3 rounded-lg font-medium transition-all duration-200
-                                            ${location.pathname === link.path ? 'text-gold-600 bg-gold-50' : 'text-olive-700 hover:text-gold-600 hover:bg-olive-50'}`}
+                                        className={link.path === '/careers'
+                                            ? 'moving-border-btn font-medium w-full shadow-sm'
+                                            : `px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-between
+                                                ${location.pathname === link.path ? 'text-gold-600 bg-gold-50' : 'text-olive-700 hover:text-gold-600 hover:bg-olive-50'}`}
                                     >
-                                        {link.name}
+                                        {link.path === '/careers' ? (
+                                            <span className="moving-border-btn-inner-mobile w-full flex items-center justify-between">
+                                                <span>{link.name}</span>
+                                                <span className="bg-gold-500 text-white text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full tracking-wider">
+                                                    Hiring
+                                                </span>
+                                            </span>
+                                        ) : (
+                                            <span>{link.name}</span>
+                                        )}
                                     </Link>
                                 )
                             ))}

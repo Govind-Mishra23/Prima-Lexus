@@ -1,163 +1,286 @@
-// Careers Page
+// Careers Page with Premium Recruitment Redesign
 import { useState } from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
 import CallToAction from '../components/sections/CallToAction';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
 import SEO from '../components/ui/SEO';
-import { FaBriefcase, FaUsers, FaGraduationCap, FaHandshake, FaArrowRight } from 'react-icons/fa';
-
-const benefits = [
-    {
-        icon: FaBriefcase,
-        title: "Professional Growth",
-        description: "Work on diverse cases across multiple practice areas and courts."
-    },
-    {
-        icon: FaUsers,
-        title: "Collaborative Environment",
-        description: "Learn from experienced advocates in a supportive team setting."
-    },
-    {
-        icon: FaGraduationCap,
-        title: "Continuous Learning",
-        description: "Regular training sessions and exposure to complex legal matters."
-    },
-    {
-        icon: FaHandshake,
-        title: "Work-Life Balance",
-        description: "Flexible work environment with focus on employee wellbeing."
-    }
-];
-
-const openings = [
-    {
-        title: "Associate Advocate",
-        location: "Delhi NCR",
-        type: "Full-time",
-        experience: "2-5 years",
-        description: "Looking for advocates with experience in Civil and Criminal litigation."
-    },
-    {
-        title: "Legal Intern",
-        location: "All Offices",
-        type: "Internship",
-        experience: "Law Students",
-        description: "3-6 month internship program for law students seeking practical experience."
-    },
-    {
-        title: "Para-legal Staff",
-        location: "Kaushambi",
-        type: "Full-time",
-        experience: "1-3 years",
-        description: "Support role for legal documentation and administrative tasks."
-    }
-];
+import { 
+    FaBriefcase, 
+    FaMapMarkerAlt, 
+    FaEnvelope, 
+    FaPhone, 
+    FaBalanceScale, 
+    FaGavel, 
+    FaCheckCircle, 
+    FaArrowRight, 
+    FaGraduationCap, 
+    FaTrophy,
+    FaCopy,
+    FaCheck
+} from 'react-icons/fa';
 
 const Careers = () => {
-    const [activeOpening, setActiveOpening] = useState(null);
+    const [copiedEmail, setCopiedEmail] = useState(false);
+    const [copiedAddress, setCopiedAddress] = useState(false);
+
+    const handleCopyEmail = () => {
+        navigator.clipboard.writeText("primalexus@primalexus.com");
+        setCopiedEmail(true);
+        setTimeout(() => setCopiedEmail(false), 2000);
+    };
+
+    const handleCopyAddress = () => {
+        navigator.clipboard.writeText("Ch. no. D-239, Supreme court of India.");
+        setCopiedAddress(true);
+        setTimeout(() => setCopiedAddress(false), 2000);
+    };
 
     return (
-        <main>
+        <main className="bg-slate-50 min-h-screen text-slate-800">
             <SEO
-                title="Careers"
-                description="Join Prima Lexus - Build your legal career with India's trusted law firm. Current openings for advocates, interns, and legal professionals."
-                keywords="legal jobs delhi, lawyer jobs, law firm careers, advocate openings, legal internship india"
+                title="Careers - Advocates Required"
+                description="Join Prima Lexus, a premium law firm valuing excellence and integrity. We are hiring enrolled advocates. Freshers can also apply."
+                keywords="legal jobs, advocate hiring, law firm careers, prima lexus careers, freshers law jobs, delhi supreme court advocates"
             />
+            
             <Breadcrumbs />
-            {/* Hero Section */}
-            <section className="relative py-24 bg-gradient-to-br from-slate-900 to-slate-800">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Team</h1>
-                        <p className="text-xl text-slate-300">
-                            Build your legal career with Prima Lexus - India's trusted law firm
-                        </p>
-                    </div>
-                </div>
-            </section>
 
-            {/* Why Work With Us */}
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4">
-                    <SectionTitle
-                        title="Why Work With Us"
-                        subtitle="Be part of a team that values excellence, integrity, and professional growth."
-                    />
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {benefits.map((benefit, index) => (
-                            <div key={index} className="text-center p-6 rounded-2xl bg-slate-50 hover:bg-amber-50 transition-colors">
-                                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center">
-                                    <benefit.icon className="w-8 h-8 text-white" />
-                                </div>
-                                <h3 className="text-xl font-bold text-slate-800 mb-2">{benefit.title}</h3>
-                                <p className="text-slate-600">{benefit.description}</p>
+            {/* Premium Hero Banner Section */}
+            <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-olive-950 to-slate-900 py-24 text-white">
+                {/* Background decorative patterns */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500 rounded-full filter blur-3xl -translate-y-12 translate-x-12"></div>
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-olive-500 rounded-full filter blur-3xl translate-y-12 -translate-x-12"></div>
+                </div>
+
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+                        {/* Left Content */}
+                        <div className="flex-1 text-center lg:text-left">
+                            <div className="inline-flex items-center gap-2 border border-gold-500/30 bg-gold-500/10 px-4 py-1.5 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6">
+                                <FaBriefcase className="w-3.5 h-3.5" />
+                                We Are Hiring
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">
+                                ADVOCATES <span className="bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 bg-clip-text text-transparent">REQUIRED</span>
+                            </h1>
+                            <p className="text-xl md:text-2xl font-light text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                                Join a team that values excellence & integrity in practice.
+                            </p>
 
-            {/* Current Openings */}
-            <section className="py-20 bg-slate-50">
-                <div className="container mx-auto px-4">
-                    <SectionTitle
-                        title="Current Openings"
-                        subtitle="Explore opportunities to join our growing team."
-                    />
-                    <div className="max-w-4xl mx-auto space-y-6">
-                        {openings.map((opening, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-                            >
-                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                                    <div>
-                                        <h3 className="text-xl font-bold text-slate-800 mb-2">{opening.title}</h3>
-                                        <div className="flex flex-wrap gap-3 text-sm">
-                                            <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-full">
-                                                📍 {opening.location}
-                                            </span>
-                                            <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full">
-                                                {opening.type}
-                                            </span>
-                                            <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full">
-                                                {opening.experience}
-                                            </span>
-                                        </div>
-                                        <p className="text-slate-600 mt-3">{opening.description}</p>
+                            {/* Locations Indicator */}
+                            <div className="inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 bg-slate-900/60 backdrop-blur-md border border-slate-800 p-4 rounded-2xl mb-8">
+                                <div className="flex items-center gap-2 text-gold-400 font-semibold uppercase text-sm tracking-wider">
+                                    <FaMapMarkerAlt className="w-5 h-5 animate-bounce" />
+                                    <span>Locations:</span>
+                                </div>
+                                <div className="flex flex-wrap items-center justify-center gap-3 text-base font-medium text-slate-200">
+                                    <span className="hover:text-gold-400 transition-colors">East Delhi</span>
+                                    <span className="text-slate-700">|</span>
+                                    <span className="hover:text-gold-400 transition-colors">Ghaziabad</span>
+                                    <span className="text-slate-700">|</span>
+                                    <span className="hover:text-gold-400 transition-colors">Noida</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Content - Visual Banner Callout */}
+                        <div className="w-full lg:w-96 flex-shrink-0">
+                            <div className="relative group">
+                                <div className="absolute -inset-1 bg-gradient-to-r from-gold-500 to-olive-500 rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+                                <div className="relative bg-slate-900/90 border border-slate-800 rounded-3xl p-8 text-center backdrop-blur-xl shadow-2xl">
+                                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl flex items-center justify-center shadow-lg shadow-gold-500/20">
+                                        <FaBalanceScale className="w-10 h-10 text-white" />
                                     </div>
-                                    <Button
-                                        href={`mailto:primalexus@primalexus.com?subject=Application for ${opening.title}`}
-                                        size="sm"
-                                        className="flex-shrink-0"
-                                    >
-                                        Apply Now
-                                        <FaArrowRight className="w-4 h-4 ml-2" />
-                                    </Button>
+                                    <h3 className="text-2xl font-bold text-white mb-2">Prima Lexus</h3>
+                                    <p className="text-gold-400 font-medium text-sm tracking-wider uppercase mb-6">Premium Law Firm</p>
+                                    
+                                    {/* Freshers Can Apply Badge */}
+                                    <div className="bg-gradient-to-r from-amber-500/15 via-gold-500/20 to-amber-500/15 border-2 border-gold-500/50 py-3.5 px-4 rounded-xl shadow-inner animate-pulse">
+                                        <div className="flex items-center justify-center gap-2 text-gold-300 font-bold text-base md:text-lg uppercase tracking-wide">
+                                            <FaGraduationCap className="w-5 h-5 flex-shrink-0" />
+                                            <span>Freshers Can Also Apply</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* General Application */}
-            <section className="py-20 bg-white">
+            {/* Core Job Details Section */}
+            <section className="py-24 bg-white relative">
                 <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
-                            Don't See a Perfect Match?
-                        </h2>
-                        <p className="text-slate-600 text-lg mb-8">
-                            We're always looking for talented legal professionals. Send us your resume and we'll keep you in mind for future opportunities.
-                        </p>
-                        <Button
-                            href="mailto:primalexus@primalexus.com?subject=General Career Inquiry"
-                            size="lg"
-                        >
-                            Send Your Resume
-                        </Button>
+                    <SectionTitle
+                        title="Recruitment Details"
+                        subtitle="Join our dynamic legal team. We welcome dedicated professionals ready to make a significant impact."
+                    />
+
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                        {/* Who Can Apply */}
+                        <div className="bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm">
+                                    <FaGavel className="w-6 h-6" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-slate-800">Who Can Apply?</h2>
+                            </div>
+                            
+                            <ul className="space-y-6">
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">Enrolled Advocates</h4>
+                                        <p className="text-slate-600 mt-1">Open to both Freshers and Experienced candidates seeking growth.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">Strong Skills</h4>
+                                        <p className="text-slate-600 mt-1">Excellent drafting abilities and confident court appearance skills.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-gold-500 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">Professional Values</h4>
+                                        <p className="text-slate-600 mt-1">Highly committed, growth-oriented, and ethical in work delivery.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* What We Offer */}
+                        <div className="bg-gradient-to-b from-slate-50 to-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 shadow-sm">
+                                    <FaTrophy className="w-6 h-6" />
+                                </div>
+                                <h2 className="text-2xl font-bold text-slate-800">What We Offer</h2>
+                            </div>
+
+                            <ul className="space-y-6">
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">High-Profile Cases</h4>
+                                        <p className="text-slate-600 mt-1">Direct exposure to challenging, high-profile legal matters and litigation.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">Growth & Mentorship</h4>
+                                        <p className="text-slate-600 mt-1">Continuous professional training, guidance, and active career development support.</p>
+                                    </div>
+                                </li>
+                                <li className="flex items-start gap-4">
+                                    <FaCheckCircle className="w-6 h-6 text-olive-600 mt-1 flex-shrink-0" />
+                                    <div>
+                                        <h4 className="font-bold text-slate-800 text-lg">Dynamic Environment</h4>
+                                        <p className="text-slate-600 mt-1">A collaborative, premium workplace valuing integrity and mutual respect.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Premium Action Card: Apply & Contact */}
+            <section className="pb-24 pt-4 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-5xl mx-auto">
+                        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-950 via-olive-900 to-slate-900 text-white p-8 md:p-12 shadow-2xl">
+                            {/* Visual background details */}
+                            <div className="absolute top-0 right-0 w-80 h-80 bg-gold-600/10 rounded-full blur-3xl pointer-events-none"></div>
+                            
+                            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                                {/* Left column: Send CV */}
+                                <div className="space-y-6">
+                                    <div className="inline-flex items-center gap-2 bg-gold-500/10 text-gold-400 border border-gold-500/20 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">
+                                        Easy Application
+                                    </div>
+                                    <h3 className="text-2xl md:text-3xl font-extrabold text-white">Send Your CV</h3>
+                                    <p className="text-slate-350 leading-relaxed text-sm md:text-base">
+                                        We invite qualified candidates to email their resume/CV directly to our recruitment team. Please mention your experience and practice interest.
+                                    </p>
+                                    
+                                    <div className="flex flex-col sm:flex-row gap-3">
+                                        <Button
+                                            href="mailto:primalexus@primalexus.com?subject=Application for Advocate Position - Prima Lexus"
+                                            variant="primary"
+                                            className="flex items-center justify-center gap-2 group w-full sm:w-auto"
+                                        >
+                                            <FaEnvelope className="w-4 h-4" />
+                                            <span>Email Application</span>
+                                            <FaArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                                        </Button>
+
+                                        <button
+                                            onClick={handleCopyEmail}
+                                            className="flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 px-5 py-3 rounded-lg font-semibold transition-all duration-300"
+                                            aria-label="Copy recruitment email address"
+                                        >
+                                            {copiedEmail ? <FaCheck className="w-4 h-4 text-emerald-500" /> : <FaCopy className="w-4 h-4 text-gold-400" />}
+                                            <span>{copiedEmail ? "Copied!" : "Copy Email"}</span>
+                                        </button>
+                                    </div>
+                                    <div className="text-xs text-slate-400">
+                                        Recruitment Email: <span className="text-gold-400 underline font-mono select-all">primalexus@primalexus.com</span>
+                                    </div>
+                                </div>
+
+                                {/* Right column: Contact details & Address */}
+                                <div className="space-y-6 md:border-l md:border-slate-800 md:pl-12">
+                                    <h3 className="text-2xl font-bold text-white">Contact & Office Details</h3>
+                                    
+                                    <div className="space-y-4 text-sm md:text-base">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-10 h-10 bg-gold-500/10 rounded-lg flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                                <FaPhone className="w-4 h-4" />
+                                            </div>
+                                            <div>
+                                                <h4 className="text-xs text-slate-400 uppercase tracking-wider mb-1">Call for Inquiries</h4>
+                                                <div className="flex flex-col gap-1 font-semibold text-slate-200">
+                                                    <a href="tel:+918285858505" className="hover:text-gold-400 transition-colors">+91 8285858505</a>
+                                                    <a href="tel:+919873964400" className="hover:text-gold-400 transition-colors">+91 9873964400</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-10 h-10 bg-gold-500/10 rounded-lg flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                                <FaMapMarkerAlt className="w-4 h-4" />
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h4 className="text-xs text-slate-400 uppercase tracking-wider mb-1">Office Address</h4>
+                                                <p className="text-slate-200 font-medium">Ch. no. D-239, Supreme court of India.</p>
+                                                <button 
+                                                    onClick={handleCopyAddress}
+                                                    className="inline-flex items-center gap-1.5 text-xs text-gold-400 hover:text-gold-300 underline mt-1.5"
+                                                >
+                                                    {copiedAddress ? "Address Copied!" : "Copy Address"}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Slogan Banner */}
+                            <div className="border-t border-slate-800 mt-12 pt-8 text-center flex flex-col items-center justify-center gap-3">
+                                <div className="w-10 h-10 bg-slate-900 rounded-full flex items-center justify-center border border-gold-500/30 text-gold-400 shadow-md">
+                                    <FaBalanceScale className="w-4 h-4" />
+                                </div>
+                                <p className="text-sm font-semibold tracking-widest uppercase text-slate-400">
+                                    Excellence in Advocacy. Integrity in Practice.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

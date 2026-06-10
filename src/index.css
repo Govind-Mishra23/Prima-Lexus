@@ -117,3 +117,74 @@ button {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Moving gradient border animation for Careers tab */
+@keyframes rotate-bg {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moving-border-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  padding: 1.5px; /* Border thickness */
+  border-radius: 8px; /* Matching rounded-lg */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moving-border-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #d4a853 25%, /* gold-500 */
+    transparent 50%,
+    #d4a853 75%,
+    transparent 100%
+  );
+  animation: rotate-bg 3s linear infinite;
+}
+
+.moving-border-btn-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 7px;
+  padding: 6.5px 14.5px; /* Precision padding for desktop */
+  transition: all 0.3s ease;
+  color: #c49038; /* gold-600 */
+  font-weight: 600;
+}
+
+.moving-border-btn-inner-mobile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 7px;
+  padding: 10.5px 14.5px; /* Precision padding for mobile */
+  transition: all 0.3s ease;
+  color: #c49038; /* gold-600 */
+  font-weight: 600;
+}
+
+.moving-border-btn:hover .moving-border-btn-inner,
+.moving-border-btn:hover .moving-border-btn-inner-mobile {
+  background: #faf5e0; /* gold-100 */
+  color: #a3712e; /* gold-700 */
+}

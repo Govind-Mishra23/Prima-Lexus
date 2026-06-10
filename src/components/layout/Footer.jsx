@@ -13,6 +13,7 @@ import {
   FaBalanceScale,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import { track } from "@vercel/analytics";
 import { primaryContact } from "../../data/offices";
 import logoImage from "../../assets/logo.png";
 
@@ -23,6 +24,7 @@ const quickLinks = [
   { name: "About Us", path: "/about" },
   { name: "Practice Areas", path: "/practice-areas" },
   { name: "Our Team", path: "/team" },
+  { name: "Careers", path: "/careers" },
   { name: "Blog", path: "/blog" },
   { name: "Contact Us", path: "/contact" },
 ];
@@ -39,6 +41,13 @@ const practiceLinks = [
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { openModal } = useConsultation();
+
+  const handleDeveloperContactClick = () => {
+    track("developer_contact_click", {
+      section: "footer_marketing_strip",
+      placement: "footer",
+    });
+  };
 
   return (
     <footer className="relative overflow-hidden">
@@ -226,6 +235,7 @@ const Footer = () => {
                 href={developerContactUrl}
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleDeveloperContactClick}
                 className="inline-flex items-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/10 px-5 py-2 text-sm font-semibold text-gold-300 hover:bg-gold-500 hover:text-white transition-all duration-300"
               >
                 Contact Developer
